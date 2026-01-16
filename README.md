@@ -24,20 +24,6 @@ This Rust tool automatically detects IPv6 address changes and updates the corres
 - Rust 1.70 or higher
 - A Cloudflare account with API access
 - A domain managed by Cloudflare
-
-## Installation
-
-1. Clone this repository:
-```bash
-git clone https://github.com/lsnnt/ipv6updater.git
-cd ipv6updater
-```
-
-2. Build the project:
-```bash
-cargo build --release
-```
-
 ## Configuration
 
 Create a `.env` file in the project root with the following variables:
@@ -64,6 +50,24 @@ DOMAIN=your.domain.com
 3. **DNS Record ID** (`DNS_RECORD_ID`):
    - Use Cloudflare API or CLI to list DNS records
    - Find the ID of the record you want to update
+## One-liner using Docker
+Make sure the .env file is also int the same working directory 
+```bash
+docker run --rm --env-file $(pwd)/.env --network=host ghcr.io/lsnnt/ipv6updater:latest
+```
+## Installation
+
+1. Clone this repository:
+```bash
+git clone https://github.com/lsnnt/ipv6updater.git
+cd ipv6updater
+```
+
+2. Build the project:
+```bash
+cargo build --release
+```
+
 
 ## Usage
 
