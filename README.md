@@ -84,11 +84,11 @@ cargo build --release
 2. Create a shell script (`run_updater.sh`):
 ```bash
 #!/bin/bash
-cd /path/to/updateipv6addr
+cd /path/to/ipv6updater
 set -a  # Automatically export variables
 source .env
 set +a
-./target/release/cloudflare-ddns-updater
+./target/release/ipv6updater
 ```
 
 3. Make it executable:
@@ -108,7 +108,7 @@ Now the DNS record updates automatically whenever you connect to your designated
 
 Add to crontab to run every 5 minutes:
 ```bash
-*/5 * * * * cd /path/to/updateipv6addr && set -a && source .env && set +a && ./target/release/cloudflare-ddns-updater >> /var/log/ddns.log 2>&1
+*/5 * * * * cd /path/to/ipv6updater && set -a && source .env && set +a && ./target/release/ipv6updater >> /var/log/ddns.log 2>&1
 ```
 
 ## Dependencies
