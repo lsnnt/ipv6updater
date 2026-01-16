@@ -43,7 +43,7 @@ async fn main() {
     let data = json!(
         {
           "name": domain,
-          "ttl": 3600,
+          "ttl": 1,
           "type": "AAAA",
           "comment": format!("Api called from {}",ip),
           "content": ip,
